@@ -9,7 +9,7 @@ public class Main
 
 	public static void main(String[] args)
 	    {
-		// TODO Auto-generated method stub
+		int costCounter = 0;
 		
 		sc = new Scanner(System.in);
 		//предполагаем, что пользователь знает формат ввода данных
@@ -33,6 +33,8 @@ public class Main
         		Short[] inner = b.toArray(new Short[4]);
         		short m = inner[0];
         		short n = inner[1];
+        		short costSingle = inner[2];
+        		short costDouble = inner[3];
         		
         		//имитаци¤ двумерного массива
         		byte[][] parq = new byte[m][n];
@@ -49,7 +51,48 @@ public class Main
 				     parq[k] = x;
 				}
 			    
-			
+			/*
+			алгоритм проверки на возможность починки паркета плиткой размером 1х2
+        		проверка осуществляется в пределах прямоугольника 3х2 в следующих местах:
+        		
+        		_______
+        		|x|x|x|
+        		|x| | |
+        		-------
+        		
+        		*/
+        		for(short i=0; i < parq.length; i++)
+				{
+					for(short j=0; j < parq[i].length; j++)
+						if (parq[i][j]==1)
+						    if (parq[i][j+1]==1)
+							if (parq[i+1][j]==1)
+							    if (parq[i][j+2]==1)
+								{
+								    parq[i][j]=0;
+								    parq[i][j+1]=0;
+								    parq[i+1][j]=0;
+								    parq[i][j+2]=0;
+								    costCounter += 2*costDouble;
+								}
+							    else {
+								parq[i][j]=0;
+								parq[i][j+1]=0;
+								costCounter += costDouble;
+							    }
+							else {
+							    parq[i][j]=0;
+							    parq[i][j+1]=0;
+							    costCounter += costDouble;
+							}
+						    else if (parq[i+1][j]==1)
+							{
+							    parq[i][j]=0;
+							    parq[i+1][j]=0;
+							    costCounter += costDouble;
+							}
+				}  
+        		
 			
 			
 			
