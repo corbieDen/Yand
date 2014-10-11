@@ -33,8 +33,8 @@ public class Main
         		Short[] inner = b.toArray(new Short[4]);
         		short m = inner[0];
         		short n = inner[1];
-        		short costSingle = inner[2];
-        		short costDouble = inner[3];
+        		short costDouble = inner[2];
+        		short costSingle = inner[3];
         		
         		//имитаци¤ двумерного массива
         		byte[][] parq = new byte[m][n];
@@ -65,9 +65,9 @@ public class Main
 				{
 				    for(short j=0; j < parq[i].length; j++)
 					//Проверка возможности использования метода с прямоугольником 3х2
-					if (!(i==parq.length))
+					if (!(i==parq.length-1))
 					    {
-					    if (j<parq[i].length-1)
+					    if (j<parq[i].length-2)
 						{
     						//Начало цикла основной проверки
     						if (parq[i][j]==1)
@@ -99,7 +99,7 @@ public class Main
     							}
     						//конец цикла проверки
 						}
-					    else if (j<parq[i].length)
+					    else if (j<parq[i].length-1)
         						{
         						    //основной цикл проверки для квадрата 2х2
         						    if (parq[i][j]==1)
@@ -136,7 +136,7 @@ public class Main
 					    
 					    }
 					else {
-					    	if (parq[i][j]==1 && parq[i][j+1]==1)
+					    	if (j<parq[i].length-1 && parq[i][j]==1 && parq[i][j+1]==1)
     							{
     							    parq[i][j]=0;
     							    parq[i+1][j]=0;
