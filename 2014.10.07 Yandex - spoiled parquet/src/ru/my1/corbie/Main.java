@@ -65,7 +65,7 @@ public class Main
 				}   
 				    
 			
-		
+		//Проба для коммита на GitHub
 	    }
 
     }
