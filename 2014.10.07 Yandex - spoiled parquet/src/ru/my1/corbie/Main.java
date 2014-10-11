@@ -4,9 +4,8 @@ import java.util.*;
 
 public class Main
     {
-
 	private static Scanner sc;
-
+	
 	public static void main(String[] args)
 	    {
 		//счетчик максимальной цены
@@ -38,18 +37,32 @@ public class Main
         		short costDouble = inner[2];
         		short costSingle = inner[3];
         		
+        		//проверка правильно введённых данных
+        		if (!(((0 < n) & (n < 301)) & ((0 < m) & (m < 301)) &
+        			((0 < costDouble) & (costDouble < 1001)) & ((0 < costSingle) & (costSingle < 1001))))
+        		    {
+                		    System.out.println("Введены некорректные данные");
+                		    return;
+        		    }
+        		
         		//имитация двумерного массива
         		byte[][] parq = new byte[m][n];
 
         		//обработка последующих строк ввода			
         		for(short k=0; k < m; k++)
 				{
-				    String layer = sc.nextLine();
+				    String layer = sc.nextLine().trim();
 				    byte[] x = new byte[n];
 					for (short j=0; j<n;j++)
 						if (layer.charAt(j) == '.')
 						    x[j] = 0;
-						else x[j] = 1;
+						else if (layer.charAt(j) == '*') 
+						    	x[j] = 1;
+						     else 
+							 {
+							     System.out.println("Введены некорректные данные");
+							     return;
+							 } 
 				     parq[k] = x;
 				}
 			    
@@ -159,7 +172,7 @@ public class Main
 						}						
 				}
         		
-        		System.out.printf("Минимальная стоимость починки паркета %dx%d равна %d", m, n, costCounter);
+        		System.out.println(costCounter);
 			
 	    }
 
