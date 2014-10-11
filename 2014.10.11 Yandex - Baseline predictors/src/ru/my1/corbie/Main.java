@@ -12,7 +12,7 @@ public class Main
 	    {
 		sc = new Scanner(System.in);
 		//предполагаем, что пользователь знает формат ввода данных
-		System.out.println("������� ������: "); 
+		System.out.println("Введите данные: "); 
 		String a = sc.nextLine().trim() + " ";
 		List<Short> b = new ArrayList<Short>();
 				
