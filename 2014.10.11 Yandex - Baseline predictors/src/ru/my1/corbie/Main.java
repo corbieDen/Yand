@@ -10,16 +10,13 @@ public class Main
 
 	public static void main(String[] args)
 	    {
-		//счетчик максимальной цены
-		//int costCounter = 0;
-		
 		sc = new Scanner(System.in);
-		//предполагаем, что пользователь знает формат ввода данных
-		System.out.println("Введите данные: "); 
+		//РїСЂРµРґРїРѕР»Р°РіР°РµРј, С‡С‚Рѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ Р·РЅР°РµС‚ С„РѕСЂРјР°С‚ РІРІРѕРґР° РґР°РЅРЅС‹С…
+		System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: "); 
 		String a = sc.nextLine().trim() + " ";
 		List<Short> b = new ArrayList<Short>();
 				
-		//обработка первой строки ввода
+		//РѕР±СЂР°Р±РѕС‚РєР° РїРµСЂРІРѕР№ СЃС‚СЂРѕРєРё РІРІРѕРґР°
 		StringBuilder sb = new StringBuilder();
 		for (byte i=0; i < a.length(); i++)
 		    {
