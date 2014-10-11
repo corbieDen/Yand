@@ -146,19 +146,18 @@ public class Main
     						    
 				} 
         		
-			//алгоритм проверки на возможность починки паркета плиткой размером 1х1
-        				
-			
-			
-			
-			for(int i=0; i < parq.length; i++)
+			//алгоритм проверки на починку паркета плиткой размером 1х1
+        		for(short i=0; i < parq.length; i++)
 				{
-					for(int j=0; j < parq[i].length; j++)
-						System.out.printf("%2d", parq[i][j]);
-					
-					System.out.println();
-					
-				}   
+					for(short j=0; j < parq[i].length; j++)
+					    if (parq[i][j]==1)
+						{
+						    parq[i][j]=0;
+						    costCounter +=costSingle;
+						}						
+				}
+        		
+        		System.out.printf("Минимальная стоимость починки паркета %dx%d равна %d", m, n, costCounter);
 			
 	    }
 
