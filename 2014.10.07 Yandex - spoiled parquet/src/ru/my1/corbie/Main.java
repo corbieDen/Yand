@@ -9,6 +9,7 @@ public class Main
 
 	public static void main(String[] args)
 	    {
+		//счетчик максимальной цены
 		int costCounter = 0;
 		
 		sc = new Scanner(System.in);
@@ -31,12 +32,13 @@ public class Main
         		    }
         		
         		Short[] inner = b.toArray(new Short[4]);
+        		//обработка входных данных о размерах комнаты и цен
         		short m = inner[0];
         		short n = inner[1];
         		short costDouble = inner[2];
         		short costSingle = inner[3];
         		
-        		//имитаци¤ двумерного массива
+        		//имитация двумерного массива
         		byte[][] parq = new byte[m][n];
 
         		//обработка последующих строк ввода			
